@@ -1,7 +1,7 @@
-const Discord = require("discord.js")
-const fs = require("fs")
-const bot = new Discord.Client()
-const config = require("./config.json")
+const Discord = require("discord.js");
+const fs = require("fs");
+const bot = new Discord.Client();
+const config = require("./config.js");
 
 bot.commands = new Discord.Collection()
 const prefix = "!"
@@ -11,6 +11,7 @@ const commandFiles = fs.readdirSync("./commands").filter(file => file.endsWith("
 for(const file of commandFiles) {
     const command = require(`./commands/${file}`)
     bot.commands.set(command.name, command)
+    console.log(bot.commands)
 }
 
 bot.on("ready", () => {

@@ -1,1 +1,3 @@
-console.log(1014 % 60 * 10 / 60)
+const num1 = '5'
+const num2 = 'n'
+console.log(isNaN(+num2))
